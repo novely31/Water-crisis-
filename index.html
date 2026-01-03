@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H2O Hope | Clean Water for Everyone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo"><i class="fas fa-tint"></i> H2O<span>HOPE</span></div>
+            <ul class="nav-links">
+                <li>
+                    <select id="language-select" class="lang-dropdown">
+                        <option value="en">English</option>
+                        <option value="sw">Swahili</option>
+                        <option value="ha">Hausa</option>
+                        <option value="yo">Yoruba</option>
+                    </select>
+                </li>
+                <li><a href="#guides" data-i18n="nav-guides">Guides</a></li>
+                <li><a href="#donate" class="nav-btn" data-i18n="nav-donate">Help Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 data-i18n="hero-h1">785 Million People Lack Clean Water.</h1>
+            <p data-i18n="hero-p">Providing DIY life-saving filtration guides and funding clean water projects for communities in crisis.</p>
+            <div class="hero-btns">
+                <a href="#guides" class="btn-primary" data-i18n="btn-filter">Learn to Filter</a>
+                <a href="#donate" class="btn-secondary" data-i18n="btn-donate-hero">Donate $10</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="guides" class="guides-section">
+        <h2 class="section-title" data-i18n="guides-title">Water Solution Guides</h2>
+        <div class="guide-grid">
+            <div class="guide-card">
+                <div class="guide-img filter-1"></div>
+                <div class="guide-info">
+                    <h3 data-i18n="guide-1-title">The Bio-Sand Filter</h3>
+                    <p data-i18n="guide-1-desc">Uses sand and gravel to remove 99% of bacteria and parasites.</p>
+                    <button class="open-guide" data-guide="biosand" data-i18n="view-btn">View Instructions</button>
+                </div>
+            </div>
+            <div class="guide-card">
+                <div class="guide-img filter-2"></div>
+                <div class="guide-info">
+                    <h3 data-i18n="guide-2-title">SODIS Method</h3>
+                    <p data-i18n="guide-2-desc">Using UV sunlight to disinfect water in clear plastic bottles.</p>
+                    <button class="open-guide" data-guide="sodis" data-i18n="view-btn">View Instructions</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="donate" class="donate-box">
+        <h2 data-i18n="donate-h2">Change a Life Today</h2>
+        <p data-i18n="donate-p">Your contribution helps us distribute filtration kits to families in need.</p>
+        <div class="donation-options">
+            <button class="amt-btn" data-amt="10">$10</button>
+            <button class="amt-btn active" data-amt="25">$25</button>
+            <button class="amt-btn" data-amt="50">$50</button>
+            <input type="number" id="custom-amt" placeholder="Custom $">
+        </div>
+        <button class="btn-primary large" data-i18n="donate-final">Donate via Secure Portal</button>
+        <p class="secure-text"><i class="fas fa-lock"></i> Secured by Stripe & PayPal</p>
+    </section>
+
+    <div id="guideModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 H2O Hope Project. Built for Humanity.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
