@@ -1,110 +1,112 @@
-// 1. Language Database
+
+// 1. Full Multi-Language Database
 const translations = {
     en: {
-        "nav-guides": "Guides", "nav-donate": "Help Now",
-        "hero-h1": "785 Million People Lack Clean Water.", "hero-p": "Providing DIY life-saving filtration guides and funding clean water.",
-        "btn-filter": "Learn to Filter", "btn-donate-hero": "Donate $10",
-        "guides-title": "Water Solution Guides", "guide-1-title": "The Bio-Sand Filter",
-        "guide-1-desc": "Uses sand and gravel to remove 99% of bacteria and parasites.", "view-btn": "View Instructions",
-        "donate-h2": "Change a Life Today", "donate-p": "Your contribution helps us distribute filtration kits to families in need.", "donate-final": "Donate via Secure Portal"
+        "nav-guides": "Guides", "nav-impact": "Impact", "nav-donate": "Help Now",
+        "hero-h1": "Clean Water is a Human Right.", "hero-p": "A library of life-saving filtration techniques.",
+        "btn-quiz": "Water Quality Check", "btn-filter": "View All Guides",
+        "impact-title": "Our Global Progress", "stat-liters": "Liters Purified", "stat-families": "Families Helped", "stat-filters": "Filters Built",
+        "guides-title": "Water Solution Library", "view-btn": "Instructions",
+        "guide-cloth-title": "Cloth Pre-Filter", "guide-cloth-desc": "Removing silt and parasites using woven cotton.",
+        "guide-1-title": "Bio-Sand Filter", "guide-1-desc": "Biological filtration system for home use.",
+        "guide-2-title": "SODIS Method", "guide-2-desc": "Solar disinfection using sunlight UV.",
+        "stories-title": "Community Voices", "share-title": "Add Your Story", "btn-submit": "Post Experience",
+        "donate-h2": "Fund a Filter Today", "donate-final": "Donate Now"
     },
     sw: { // Swahili
-        "nav-guides": "Miongozo", "nav-donate": "Saidia Sasa",
-        "hero-h1": "Watu Milioni 785 Hawana Maji Safi.", "hero-p": "Tunatoa miongozo ya kuchuja maji na kufadhili miradi ya maji safi.",
-        "btn-filter": "Jifunze Kuchuja", "btn-donate-hero": "Changia $10",
-        "guides-title": "Miongozo ya Kusafisha Maji", "guide-1-title": "Kichujio cha Mchanga",
-        "guide-1-desc": "Hutumia mchanga na kokoto kuondoa 99% ya bakteria.", "view-btn": "Soma Maelekezo",
-        "donate-h2": "Badilisha Maisha Leo", "donate-p": "Mchango wako unatusaidia kusambaza vifaa vya kuchuja maji kwa familia.", "donate-final": "Changia Sasa"
+        "nav-guides": "Miongozo", "nav-impact": "Matokeo", "nav-donate": "Saidia",
+        "hero-h1": "Maji Safi ni Haki ya Kila Mtu.", "btn-quiz": "Pima Ubora wa Maji",
+        "impact-title": "Maendeleo Yetu", "view-btn": "Maelekezo"
     },
     ha: { // Hausa
-        "nav-guides": "Hanyoyi", "nav-donate": "Taimaka Yanzu",
-        "hero-h1": "Mutane Miliyan 785 Ba Su Da Ruwa Mai Kyau.", "hero-p": "Muna ba da jagororin tace ruwa da tallafawa samar da ruwa.",
-        "btn-filter": "Koyi Tace Ruwa", "btn-donate-hero": "Ba da $10",
-        "guides-title": "Hanyoyin Tace Ruwa", "guide-1-title": "Tace Ruwa da Yashi",
-        "guide-1-desc": "Yana amfani da yashi da duwatsu don kawar da kwayoyin cuta.", "view-btn": "Duba Yadda Ake Yi",
-        "donate-h2": "Canza Rayuwar Wani Yau", "donate-p": "Taimakonka zai ba da ruwa mai kyau ga iyali guda.", "donate-final": "Taimaka Yanzu"
+        "nav-guides": "Jagora", "nav-impact": "Tasiri", "nav-donate": "Taimaka",
+        "hero-h1": "Ruwa Mai Tsabta Haƙƙin Dan Adam Ne.", "btn-quiz": "Duba Ingancin Ruwa"
     },
     yo: { // Yoruba
-        "nav-guides": "Ìtọ́ni", "nav-donate": "Rànlọ́wọ́ Báyìí",
-        "hero-h1": "Ọ̀pọ̀lọpọ̀ ènìyàn kò ní omi mímọ́.", "hero-p": "A ń pèsè ìtọ́ni fún títọ́ omi àti owó fún iṣẹ́ omi mímọ́.",
-        "btn-filter": "Kọ́ Bí A Ṣe Ń Tọ́ Omi", "btn-donate-hero": "Fi $10 Ṣe Ìrànlọ́wọ́",
-        "guides-title": "Ìtọ́ni fún Omi Mímọ́", "guide-1-title": "Ìtọ́ Omi pẹ̀lú Iyanrìn",
-        "guide-1-desc": "Lílo iyanrìn láti yọ kòkòrò àrùn kúrò nínú omi.", "view-btn": "Wo Ìtọ́ni",
-        "donate-h2": "Yí Rayé Ẹnìkan Padà Lónìí", "donate-p": "Ìrànlọ́wọ́ rẹ yóò pèsè omi mímọ́ fún ẹbí kan.", "donate-final": "Fi Ìrànlọ́wọ́ Lọ́wọ́"
+        "nav-guides": "Itọsọna", "nav-impact": "Ipa", "nav-donate": "Ranlọwọ",
+        "hero-h1": "Omi Mímọ́ Jẹ́ Ẹ̀tọ́ Ọmọnìyàn.", "btn-quiz": "Ṣayẹwo Didara Omi"
     }
 };
 
-// 2. Technical Guide Content
+// 2. Educational Content (Included Diagrams)
 const guideContent = {
+    cloth: {
+        title: "Cloth Pre-Filter",
+        html: ` <p>Essential for removing large particles and visible mud.</p><h4>Steps:</h4><ol><li>Fold a cotton cloth 8 times.</li><li>Stretch it over a clean vessel.</li><li>Pour water through slowly.</li></ol>`
+    },
     biosand: {
-        title: "Building a Bio-Sand Filter",
-        html: `
-            <div class="guide-header-box">
-                <p><strong>Goal:</strong> Transform dirty pond or river water into drinking water using biology.</p>
-            </div>
-            
-            <h3>Preparation:</h3>
-            <p>1. Find a clean plastic drum or concrete container. 2. Install a PVC pipe at the bottom that curves up to the top.</p>
-            <h3>Layering (Bottom to Top):</h3>
-            <ul>
-                <li><strong>Gravel (5cm):</strong> Prevents the outlet pipe from clogging.</li>
-                <li><strong>Coarse Sand (5cm):</strong> Supports the fine sand.</li>
-                <li><strong>Fine Sand (40cm):</strong> This is the main filter. Must be washed until the water runs clear.</li>
-            </ul>
-            <div class="warning-alert">
-                <strong>Crucial:</strong> The sand must always stay covered by 5cm of water. After 21 days, a "Bio-layer" grows on top that eats germs.
-            </div>
-        `
+        title: "Bio-Sand Filter",
+        html: ` <p>Provides high-volume clean water for an entire family.</p><ul><li><strong>Top Layer:</strong> Bio-layer (eats bacteria).</li><li><strong>Middle:</strong> Fine sand.</li><li><strong>Bottom:</strong> Coarse gravel.</li></ul>`
     },
     sodis: {
-        title: "Solar Disinfection (SODIS)",
-        html: `
-            <div class="guide-header-box">
-                <p><strong>Goal:</strong> Use UV radiation to kill bacteria in clear water.</p>
-            </div>
-            
-            <h3>Instructions:</h3>
-            <p>1. Use clear <strong>PET</strong> plastic bottles (under 2 Liters). Glass will not work.</p>
-            <p>2. Fill the bottle 3/4 full and shake for 20 seconds to oxygenate it. Then fill it full.</p>
-            <p>3. Place on a metal roof or reflective surface in direct sunlight.</p>
-            <p>4. Wait <strong>6 hours</strong> (sunny) or <strong>2 days</strong> (cloudy).</p>
-        `
+        title: "SODIS Solar Disinfection",
+        html: ` <p>Uses UV rays to kill pathogens for free.</p><h4>Steps:</h4><ol><li>Fill clear plastic bottles.</li><li>Place on a reflective surface (like metal).</li><li>Expose to sun for 6 hours.</li></ol>`
     }
 };
 
-// 3. Application Logic
-const langSelect = document.getElementById('language-select');
-const modal = document.getElementById("guideModal");
-const modalBody = document.getElementById("modalBody");
-const closeBtn = document.querySelector(".close");
-
-// Change Language
-langSelect.addEventListener('change', (e) => {
+// 3. UI Logic: Language Switcher
+document.getElementById('language-select').onchange = (e) => {
     const lang = e.target.value;
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        el.innerText = translations[lang][key];
+        if (translations[lang] && translations[lang][key]) {
+            el.innerText = translations[lang][key];
+        }
     });
-});
+};
 
-// Modal Pop-ups
+// 4. UI Logic: Counter Animation
+function animateCounters() {
+    const counters = document.querySelectorAll('.count');
+    counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        const update = () => {
+            const current = +counter.innerText;
+            const increment = target / 60;
+            if (current < target) {
+                counter.innerText = Math.ceil(current + increment);
+                setTimeout(update, 30);
+            } else {
+                counter.innerText = target.toLocaleString();
+            }
+        };
+        update();
+    });
+}
+
+// 5. Logic: Diagnostic Tool
+function checkWaterQuality() {
+    const isCloudy = confirm("Is your water cloudy or muddy?");
+    const hasFuel = confirm("Do you have access to fire/fuel?");
+    
+    if (isCloudy) {
+        alert("DIAGNOSIS: You must use the CLOTH or BIO-SAND filter first to remove dirt.");
+    } else if (hasFuel) {
+        alert("DIAGNOSIS: BOILING is your safest and fastest option for disinfection.");
+    } else {
+        alert("DIAGNOSIS: Use the SODIS method—put clear water in the sun for 6 hours.");
+    }
+}
+
+// 6. Logic: Modal & Stories
+const modal = document.getElementById("guideModal");
+const modalBody = document.getElementById("modalBody");
+
 document.querySelectorAll('.open-guide').forEach(btn => {
-    btn.onclick = function() {
-        const key = this.getAttribute('data-guide');
-        const data = guideContent[key];
-        modalBody.innerHTML = `<h2>${data.title}</h2><hr style="margin:15px 0; border:0; border-top:1px solid #eee;">${data.html}`;
+    btn.onclick = () => {
+        const key = btn.getAttribute('data-guide');
+        modalBody.innerHTML = `<h2>${guideContent[key].title}</h2><hr style="margin:20px 0;">${guideContent[key].html} <br><button onclick="window.print()" class="btn-primary" style="margin-top:20px;">Print Manual</button>`;
         modal.style.display = "block";
-    }
+    };
 });
 
-closeBtn.onclick = () => modal.style.display = "none";
-window.onclick = (e) => { if(e.target == modal) modal.style.display = "none"; }
+document.querySelector(".close").onclick = () => modal.style.display = "none";
+window.onclick = (e) => { if(e.target == modal) modal.style.display = "none"; };
 
-// Donation Toggles
-document.querySelectorAll('.amt-btn').forEach(btn => {
-    btn.onclick = function() {
-        document.querySelectorAll('.amt-btn').forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-        document.getElementById('custom-amt').value = '';
-    }
-});
+// Initializers
+window.onload = () => {
+    animateCounters();
+    const grid = document.getElementById('storiesGrid');
+    const stories = [{name:"Musa", location:"Kenya", text:"The Bio-Sand filter saved our village from typhoid."}];
+    grid.innerHTML = stories.map(s => `<div class="story-card"><h4>${s.name} (${s.location})</h4><p>"${s.text}"</p></div>`).join('');
+};
